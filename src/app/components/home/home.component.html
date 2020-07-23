@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title">Recipes search</h5>
+          <app-search (getData)="onGetRecepies($event)"></app-search>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body" *ngIf="searchResult">
+    <app-search-result [result]="searchResult"></app-search-result>
+  </div>
+</div>

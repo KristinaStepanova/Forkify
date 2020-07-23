@@ -1,0 +1,14 @@
+.nav {
+  .link {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    & + .link {
+      margin-left: 15px;
+    }
+    &:hover,
+    &.active {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}

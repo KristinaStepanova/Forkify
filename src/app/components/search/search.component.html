@@ -1,0 +1,29 @@
+<div class="search-wrapper">
+  <form (ngSubmit)="onSearch()">
+    <mat-form-field class="w-100">
+      <input
+        type="text"
+        matInput
+        placeholder="Search"
+        [formControl]="searchControl"
+        [matAutocomplete]="history"
+      />
+      <mat-autocomplete #history="matAutocomplete">
+        <mat-option *ngFor="let item of filteredOptions" [value]="item.name">
+          {{ item.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div class="d-flex justify-content-between align-items-center">
+      <button mat-raised-button color="primary">
+        Find
+      </button>
+      <mat-slide-toggle
+        color="primary"
+        [(ngModel)]="saveSearch"
+        name="saveSearch"
+        >Save search history</mat-slide-toggle
+      >
+    </div>
+  </form>
+</div>
